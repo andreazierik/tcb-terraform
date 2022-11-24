@@ -1,0 +1,5 @@
+tcb-terraform.csv
+modulo-03-ec2/.terraform/*
+modulo-03-ec2/.terraform.lock.hcl
+modulo-03-ec2/terraform.tfstate
+modulo-03-ec2/terraform.tfstate.backup
