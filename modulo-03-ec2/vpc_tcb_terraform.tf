@@ -1,5 +1,5 @@
 #criacao da vpc principal
-resource "aws_vpc" "vpc_main" {
+resource "aws_vpc" "main" {
   cidr_block = "12.0.0.0/16"
 
   tags = {
@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc_main" {
 
 #public subnet para instancia do EC2
 resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.vpc_main.id
+  vpc_id     = aws_vpc.main.id
   cidr_block = "12.0.0.0/24"
   availability_zone = "us-east-1a"
 
@@ -20,7 +20,7 @@ resource "aws_subnet" "public" {
 
 #private subnet1 para RDS
 resource "aws_subnet" "subnet_private_1" {
-  vpc_id     = aws_vpc.vpc_main.id
+  vpc_id     = aws_vpc.main.id
   cidr_block = "12.0.1.0/24"
   availability_zone = "us-east-1a"
 
@@ -32,7 +32,7 @@ resource "aws_subnet" "subnet_private_1" {
 
 #private subnet2 para RDS
 resource "aws_subnet" "subnet_private_2" {
-  vpc_id     = aws_vpc.vpc_main.id
+  vpc_id     = aws_vpc.main.id
   cidr_block = "12.0.2.0/24"
   availability_zone = "us-east-1b"
 
